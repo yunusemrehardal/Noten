@@ -68,3 +68,34 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## INSTALLATION OF FONTAWESOME
+
+### 1. INSTALL THE FOLLOWING NPM PACKAGES
+npm i @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/free-regular-svg-icons @fortawesome/react-fontawesome@latest
+
+### 2. USE THE ICON
+```
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+<FontAwesomeIcon icon={faPlus} />
+```
+
+## INSTALLATION OF AXIOS
+npm install axios
+
+## INSTALLATION OF REACT-BOOTSTRAP
+npm install react-bootstrap bootstrap
+```
+{/* The following line can be included in your src/index.js or App.js file */}
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+```
+
+### USAGE
+```
+import { Button } from 'react-bootstrap';
+
+<Button>Click Me!</Button>
+```
