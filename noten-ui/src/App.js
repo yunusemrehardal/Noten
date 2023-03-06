@@ -1,23 +1,29 @@
-import logo from './logo.svg';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 import './App.css';
 
 function App() {
+  const [notes, setNotes] = useState([]);
+
+  useEffect(() => {
+    // verileri axios kütüphanesi ile api'den çekelim
+    axios.get('https://localhost:7158/api/Notes')
+      .then((response) => {
+        setNotes(response.data);
+      });
+  }, []);
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container">
+        <h1 className='mt-4'>My Notes</h1>
+        <ul>
+          {notes.map((note) =>
+            <li key={note.id}>{note.title}</li>
+          )}
+        </ul>
+      </div>
     </div>
   );
 }
